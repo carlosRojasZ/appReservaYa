@@ -11,7 +11,7 @@ public class Cliente {
 	public List <Reservas >listReservas;
 	
 	
-	//Getter and Setter .... 
+	//Getter and Setter .... ...
 	
 	public String getNombre() {
 		return nombre;
