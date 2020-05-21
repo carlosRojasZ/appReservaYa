@@ -2,6 +2,7 @@ package com.miapp.proyectoSpring.pojo;
 
 public class Horario {
 
+	//---
 		public int tipo; // 1 = jornada completa, 2 = jornada tarde, 3 = joranada mañana
 		public String aperturaM;
 		public String aperturaT;
