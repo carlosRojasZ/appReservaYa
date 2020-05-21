@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Reservas {
 	
-	//---
+	//------
 	public long idReserva;
 	public Local idLocal;
 	public String nombreReserva;
