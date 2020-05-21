@@ -3,7 +3,7 @@ package com.miapp.proyectoSpring.pojo;
 import java.util.Date;
 
 public class Reservas {
-	//hola, puto el q lo lea
+	
 	public long idReserva;
 	public Local idLocal;
 	public String nombreReserva;
