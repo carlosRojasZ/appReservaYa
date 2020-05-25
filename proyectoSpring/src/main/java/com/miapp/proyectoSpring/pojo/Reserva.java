@@ -2,9 +2,8 @@ package com.miapp.proyectoSpring.pojo;
 
 import java.util.Date;
 
-public class Reservas {
+public class Reserva {
 	
-	//------
 	public long idReserva;
 	public Local idLocal;
 	public String nombreReserva;
@@ -13,7 +12,7 @@ public class Reservas {
 	public int numeroPersonas;
 	public String mensaje;
 	
-	public Reservas(long idReserva, Local idLocal, String nombreReserva, Number telefonoReserva, Date fechaHora,
+	public Reserva(long idReserva, Local idLocal, String nombreReserva, Number telefonoReserva, Date fechaHora,
 			int numeroPersonas, String mensaje) {
 		super();
 		this.idReserva = idReserva;

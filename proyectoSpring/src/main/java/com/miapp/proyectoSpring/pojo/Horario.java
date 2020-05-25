@@ -8,23 +8,28 @@ public class Horario {
 		public String aperturaT;
 		public String cierreM;
 		public String cierreT;
-		
-		public void getHorario() {
-			switch(tipo) {
-			case 1:
-			break;
-			case 2:
-			break;
-			case 3:
-			break;
-			}
-		}
+		 
 
 		public int getTipo() {
+			establecerTipoHorario();
 			return tipo;
 		}
 
+		public void establecerTipoHorario() {
+			if(this.aperturaM != null && this.cierreT != null ) {
+				this.tipo = 1;
+			}
+			if(this.aperturaT != null && this.aperturaM == null 
+				&& this.cierreM == null && this.cierreT != null) {
+				this.tipo = 2;
+			}
+			if(this.aperturaM != null && this.aperturaT == null
+					&& this.cierreM != null && this.cierreT == null) {
+				this.tipo =3;
+			}
+		}
 		public void setTipo(int tipo) {
+			
 			this.tipo = tipo;
 		}
 

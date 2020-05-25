@@ -8,7 +8,7 @@ public class Cliente {
 	public String nombre;
 	public Number password;
 	public Number telefono;
-	public List <Reservas >listReservas;
+	public List <Reserva >listReservas;
 	
 	
 	//Getter and Setter .... ...
@@ -31,10 +31,10 @@ public class Cliente {
 	public void setTelefono(Number telefono) {
 		this.telefono = telefono;
 	}
-	public List<Reservas> getListReservas() {
+	public List<Reserva> getListReservas() {
 		return listReservas;
 	}
-	public void setListReservas(List<Reservas> listReservas) {
+	public void setListReservas(List<Reserva> listReservas) {
 		this.listReservas = listReservas;
 	}
 	
