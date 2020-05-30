@@ -8,28 +8,36 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+ 
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import org.hibernate.annotations.MetaValue;
+ 
 
 @Entity
 @Table(name = "cliente")
 public class Cliente implements Serializable {
+ 
+	private static final long serialVersionUID = 5391053006819927007L;
+
 	@Id
+	@Column
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public Long id;
+	
+//	@OneToMany(targetEntity = Reserva.class)
+	@Column(name = "id_reservas")
+	public Long idReserva;
 
+	@Column
 	public String nombre;
-
-	public Number password;
+	
+	@Column
+	public String password;
+	
+	@Column
 	public Number telefono;
 
-	@Column(name = "list_reservas")
-	@OneToMany(targetEntity = Reserva.class)
-	public List<Reserva> listaReserva;
-
+	
 
 	public String getNombre() {
 		return nombre;
@@ -39,11 +47,11 @@ public class Cliente implements Serializable {
 		this.nombre = nombre;
 	}
 
-	public Number getPassword() {
+	public String getPassword() {
 		return password;
 	}
 
-	public void setPassword(Number password) {
+	public void setPassword(String password) {
 		this.password = password;
 	}
 
@@ -55,12 +63,21 @@ public class Cliente implements Serializable {
 		this.telefono = telefono;
 	}
 
-	public List<Reserva> getListaReserva() {
-		return this.listaReserva;
+	public Long getId() {
+		return id;
 	}
 
-	public void setListaReserva(List<Reserva> listReservas) {
-		this.listaReserva = listReservas;
+	public void setId(Long id) {
+		this.id = id;
 	}
+
+	public Long getIdReserva() {
+		return idReserva;
+	}
+
+	public void setIdReserva(Long idReserva) {
+		this.idReserva = idReserva;
+	}
+ 
 
 }
