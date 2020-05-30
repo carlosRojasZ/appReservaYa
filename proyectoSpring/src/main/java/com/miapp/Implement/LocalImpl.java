@@ -3,11 +3,13 @@ package com.miapp.Implement;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.miapp.proyectoSpring.dao.LocalDAO;
 import com.miapp.proyectoSpring.interfaces.ILocal;
 import com.miapp.proyectoSpring.pojo.Local;
 
+@Service
 public class LocalImpl implements ILocal{
 
 	@Autowired

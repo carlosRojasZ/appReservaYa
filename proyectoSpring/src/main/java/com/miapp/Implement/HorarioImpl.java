@@ -3,12 +3,14 @@ package com.miapp.Implement;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.miapp.proyectoSpring.dao.HorarioDAO;
 import com.miapp.proyectoSpring.interfaces.IHorario;
 import com.miapp.proyectoSpring.pojo.Horario;
 
+@Service
 public class HorarioImpl implements IHorario{
 
 	@Autowired

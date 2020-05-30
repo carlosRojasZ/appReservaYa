@@ -1,12 +1,29 @@
 package com.miapp.proyectoSpring.pojo;
 
-import java.awt.List;
+ 
+import java.io.Serializable;
 import java.util.LinkedList;
+import java.util.List;
 
-public class Propietario {
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
+import org.hibernate.annotations.MetaValue;
+
+@Table(name="propietario")
+public class Propietario implements Serializable {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Long id;
 	public String nombrePropietario;
-	public LinkedList<Local> local = new LinkedList<>();
+	
+	@OneToMany
+	public List<Local> listaLocales;
 	
 	public String getNombrePropietario() {
 		return nombrePropietario;
@@ -14,12 +31,13 @@ public class Propietario {
 	public void setNombrePropietario(String nombrePropietario) {
 		this.nombrePropietario = nombrePropietario;
 	}
-	public LinkedList<Local> getLocal() {
-		return local;
+	public List<Local> getListaLocales() {
+		return listaLocales;
 	}
-	public void setLocal(LinkedList<Local> local) {
-		this.local = local;
+	public void setListaLocales(List<Local> listaLocales) {
+		this.listaLocales = listaLocales;
 	}
+ 
 	
 	
 	

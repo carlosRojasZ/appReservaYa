@@ -1,18 +1,46 @@
 package com.miapp.proyectoSpring.pojo;
 
-import java.awt.font.NumericShaper;
+ 
+import java.io.Serializable;
 import java.util.LinkedList;
+import java.util.List;
 
-public class Local {
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
-	public Propietario propietario;
+@Table(name="local")
+public class Local implements Serializable {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Long id;
+	
+	@Column(name = "nombre_local")
 	public String nombreLocal;
+	
+	@Column(name = "telefono_local")
 	public Number telefonoLocal;
+	
 	public String direccion;
+	
+	@OneToOne(targetEntity = Horario.class)
 	public Horario horario;
+	
+	@Column(name = "num_reservas_disponibles")
 	public int numReservasDisponibles;// total de reservas que tiene un local, añadidas por el cliente.
-	public LinkedList<Reserva> listaReservas = new LinkedList<>();
+	
+	@OneToMany(targetEntity = Reserva.class)
+	public List<Reserva> listaReservas;
+	
+	@Column(name = "tipo_negocio")
 	public String tipoNegocio;// negocio1 BAR - negocio2 OTROS
+	
+	@Column(name = "limite_personas_por_reserva")
 	public int limPersonasPorReserva;
 
 	public int getLimPersonasPorReserva() {
@@ -32,38 +60,16 @@ public class Local {
 		return false;
 	}
 
-	public boolean addReserva(Reserva reserva) {
-		if (esPosibleReservar()) {
-			listaReservas.add(reserva);
-			return true;
-		}
-		return false;
-	}
-
-	public int getNumReservasDisponibles() {
-
-		return numReservasDisponibles;
-	}
-
-	public void setNumReservasDisponibles(int numReservasDisponibles) {
-		this.numReservasDisponibles = numReservasDisponibles;
-	}
-
 	public int getNumReservasSolicitadas() {
-
 		return listaReservas.size();
 	}
-
-	public LinkedList<Reserva> getListaReservas() {
-		return listaReservas;
+	
+	public Long getId() {
+		return id;
 	}
 
-	public Propietario getPropietario() {
-		return propietario;
-	}
-
-	public void setPropietario(Propietario propietario) {
-		this.propietario = propietario;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getNombreLocal() {
@@ -98,4 +104,34 @@ public class Local {
 		this.horario = horario;
 	}
 
+	public int getNumReservasDisponibles() {
+		return numReservasDisponibles;
+	}
+
+	public void setNumReservasDisponibles(int numReservasDisponibles) {
+		this.numReservasDisponibles = numReservasDisponibles;
+	}
+
+	public List<Reserva> getListaReservas() {
+		return listaReservas;
+	}
+
+	public void setListaReservas(List<Reserva> listaReservas) {
+		this.listaReservas = listaReservas;
+	}
+
+	public String getTipoNegocio() {
+		return tipoNegocio;
+	}
+
+	public void setTipoNegocio(String tipoNegocio) {
+		this.tipoNegocio = tipoNegocio;
+	}
+
+	public void setLimPersonasPorReserva(int limPersonasPorReserva) {
+		this.limPersonasPorReserva = limPersonasPorReserva;
+	}
+
+	
+	 
 }

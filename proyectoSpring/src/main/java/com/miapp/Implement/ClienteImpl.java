@@ -4,12 +4,15 @@ import java.util.List;
  
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.miapp.proyectoSpring.dao.ClienteDAO;
 import com.miapp.proyectoSpring.interfaces.ICliente;
 import com.miapp.proyectoSpring.pojo.Cliente;
 
+
+@Service
 public class ClienteImpl implements ICliente {
 
 	@Autowired

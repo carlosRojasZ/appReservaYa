@@ -1,68 +1,55 @@
 package com.miapp.proyectoSpring.pojo;
 
-public class Horario {
+import java.io.Serializable;
+import java.util.Date;
 
-	//---
-		public int tipo; // 1 = jornada completa, 2 = jornada tarde, 3 = joranada mañana
-		public String aperturaM;
-		public String aperturaT;
-		public String cierreM;
-		public String cierreT;
-		 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
-		public int getTipo() {
-			establecerTipoHorario();
-			return tipo;
-		}
+@Table(name = "horario")
+public class Horario implements Serializable {
 
-		public void establecerTipoHorario() {
-			if(this.aperturaM != null && this.cierreT != null ) {
-				this.tipo = 1;
-			}
-			if(this.aperturaT != null && this.aperturaM == null 
-				&& this.cierreM == null && this.cierreT != null) {
-				this.tipo = 2;
-			}
-			if(this.aperturaM != null && this.aperturaT == null
-					&& this.cierreM != null && this.cierreT == null) {
-				this.tipo =3;
-			}
-		}
-		public void setTipo(int tipo) {
-			
-			this.tipo = tipo;
-		}
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	public Long id;
 
-		public String getAperturaM() {
-			return aperturaM;
-		}
+	public int tipo; // 1 = jornada completa, 2 = jornada tarde, 3 = joranada mañana
 
-		public void setAperturaM(String aperturaM) {
-			this.aperturaM = aperturaM;
-		}
+	@Column(name = "apertura_maniana")
+	@Temporal(TemporalType.DATE)
+	public Date aperturaM;
+	@Column(name = "apertura_tarde")
+	public Date aperturaT;
+	@Column(name = "cierre_maniana")
+	public Date cierreM;
+	@Column(name = "cierre_tarde")
+	public Date cierreT;
 
-		public String getAperturaT() {
-			return aperturaT;
-		}
+	public int getTipo() {
+		establecerTipoHorario();
+		return tipo;
+	}
 
-		public void setAperturaT(String aperturaT) {
-			this.aperturaT = aperturaT;
+	public void establecerTipoHorario() {
+		if (this.aperturaM != null && this.cierreT != null) {
+			this.tipo = 1;
 		}
+		if (this.aperturaT != null && this.aperturaM == null && this.cierreM == null && this.cierreT != null) {
+			this.tipo = 2;
+		}
+		if (this.aperturaM != null && this.aperturaT == null && this.cierreM != null && this.cierreT == null) {
+			this.tipo = 3;
+		}
+	}
 
-		public String getCierreM() {
-			return cierreM;
-		}
+	public void setTipo(int tipo) {
 
-		public void setCierreM(String cierreM) {
-			this.cierreM = cierreM;
-		}
+		this.tipo = tipo;
+	}
 
-		public String getCierreT() {
-			return cierreT;
-		}
-
-		public void setCierreT(String cierreT) {
-			this.cierreT = cierreT;
-		}
-		
 }
