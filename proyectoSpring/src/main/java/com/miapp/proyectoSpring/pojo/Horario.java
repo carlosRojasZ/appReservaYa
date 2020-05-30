@@ -23,11 +23,17 @@ public class Horario implements Serializable {
 	@Column(name = "apertura_maniana")
 	@Temporal(TemporalType.DATE)
 	public Date aperturaM;
+
 	@Column(name = "apertura_tarde")
+	@Temporal(TemporalType.DATE)
 	public Date aperturaT;
+
 	@Column(name = "cierre_maniana")
+	@Temporal(TemporalType.DATE)
 	public Date cierreM;
+
 	@Column(name = "cierre_tarde")
+	@Temporal(TemporalType.DATE)
 	public Date cierreT;
 
 	public int getTipo() {
