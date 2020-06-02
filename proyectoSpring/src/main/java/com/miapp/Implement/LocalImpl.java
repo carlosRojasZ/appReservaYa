@@ -6,11 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.miapp.proyectoSpring.dao.LocalDAO;
-import com.miapp.proyectoSpring.interfaces.ILocal;
 import com.miapp.proyectoSpring.pojo.Local;
+import com.miapp.proyectoSpring.servicios.ILocalService;
 
 @Service
-public class LocalImpl implements ILocal{
+public class LocalImpl implements ILocalService{
 
 	@Autowired
 	private LocalDAO localDAO;

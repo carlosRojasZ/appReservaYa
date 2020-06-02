@@ -1,10 +1,10 @@
-package com.miapp.proyectoSpring.interfaces;
+package com.miapp.proyectoSpring.servicios;
 
 import java.util.List;
 
 import com.miapp.proyectoSpring.pojo.Horario;
 
-public interface IHorario {
+public interface IHorarioService {
 	public List<Horario> findAll();
 	public Horario findById(Long id);
 	

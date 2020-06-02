@@ -6,11 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.miapp.proyectoSpring.dao.PropietarioDAO;
-import com.miapp.proyectoSpring.interfaces.IPropietario;
 import com.miapp.proyectoSpring.pojo.Propietario;
+import com.miapp.proyectoSpring.servicios.IPropietarioService;
 
 @Service
-public class PropietarioImpl implements IPropietario {
+public class PropietarioImpl implements IPropietarioService {
 
 	@Autowired
 	private PropietarioDAO propietarioDAO;

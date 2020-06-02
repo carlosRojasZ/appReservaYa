@@ -1,10 +1,10 @@
-package com.miapp.proyectoSpring.interfaces;
+package com.miapp.proyectoSpring.servicios;
 
 import java.util.List;
  
 import com.miapp.proyectoSpring.pojo.Cliente;
 
-public interface ICliente {
+public interface IClienteService {
 	public List<Cliente> findAll();
 	public Cliente findById(Long id);
 	

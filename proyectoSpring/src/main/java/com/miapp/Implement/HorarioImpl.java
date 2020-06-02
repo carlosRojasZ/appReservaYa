@@ -7,11 +7,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.miapp.proyectoSpring.dao.HorarioDAO;
-import com.miapp.proyectoSpring.interfaces.IHorario;
 import com.miapp.proyectoSpring.pojo.Horario;
+import com.miapp.proyectoSpring.servicios.IHorarioService;
 
 @Service
-public class HorarioImpl implements IHorario{
+public class HorarioImpl implements IHorarioService{
 
 	@Autowired
 	private HorarioDAO horarioDAO;

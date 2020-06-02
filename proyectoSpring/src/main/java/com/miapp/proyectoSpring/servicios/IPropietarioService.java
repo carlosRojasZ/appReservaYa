@@ -1,10 +1,10 @@
-package com.miapp.proyectoSpring.interfaces;
+package com.miapp.proyectoSpring.servicios;
 
 import java.util.List;
 
 import com.miapp.proyectoSpring.pojo.Propietario;
  
-public interface IPropietario {
+public interface IPropietarioService {
 	public List<Propietario> findAll();
 	public Propietario findById(Long id);
 	

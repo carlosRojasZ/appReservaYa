@@ -6,11 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import com.miapp.proyectoSpring.dao.ReservaDAO;
-import com.miapp.proyectoSpring.interfaces.IReserva;
 import com.miapp.proyectoSpring.pojo.Reserva;
+import com.miapp.proyectoSpring.servicios.IReservaService;
 
 @Service
-public class ReservaImpl implements IReserva{
+public class ReservaImpl implements IReservaService{
 
 	@Autowired
 	private ReservaDAO reservaDAO;
